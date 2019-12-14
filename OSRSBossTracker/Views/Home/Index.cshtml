@@ -1,12 +1,20 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    string ign = "";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron">
+        <h1>OSRS Boss KC Tracker</h1>
+        <p class="lead">Search for your IGN</p>
+        <div class="form-group">
+            <div class="col-md-10">
+                @{
+                    <input type="text" id="ignsearch" name="ignsearch" />
+                    <a class="btn btn-default" href="https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + ignsearch>Search</a>
+                }
+            </div>
+        </div>
+    </div>
 
 <div class="row">
     <div class="col-md-4">
