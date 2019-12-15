@@ -1,0 +1,24 @@
+﻿@model OSRSBossTracker.Models.UsersModel
+@{
+    ViewBag.Title = "Stats";
+}
+
+<h2>@Model.Name</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <td>
+                Stats
+            </td>
+            <td>
+                @foreach (var s in Model.Stats)
+                {
+                    @Html.DisplayFor(model => s)
+                    <br/>
+                }
+
+            </td>
+        </tr>
+    </table>
+</div>

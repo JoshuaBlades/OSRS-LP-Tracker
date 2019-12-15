@@ -26,11 +26,5 @@ namespace OSRSBossTracker.Controllers
 
             return View();
         }
-
-        public ActionResult GetUsername(string ign)
-        {
-            string url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=" + "ign";
-            return View();
-        }
     }
 }
