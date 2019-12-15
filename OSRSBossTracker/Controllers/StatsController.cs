@@ -159,7 +159,7 @@ namespace OSRSBossTracker.Controllers
             for(int i = 0; i < bosses.Length; i += 2)
             {
                 Bosses bossKC = new Bosses(bosses[i], bosses[i + 1]);
-                User.bosses.Add(bossKC);
+                User.Bosses.Add(bossKC);
             }
 
             //===== commented this out for now cos just wanted to see boss kills =====

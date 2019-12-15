@@ -7,9 +7,9 @@
     <p class="lead">Search for your IGN</p>
     <div class="form-group">
         <div class="col-md-10">
-            @using(Html.BeginForm("GetStats", "Stats", FormMethod.Post))
+            @using (Html.BeginForm("GetStats", "Stats", FormMethod.Post))
             {
-                @Html.TextBox("ign");
+                @Html.TextBox("ign", null, new { @class = "form-inline" });
                 <input type="submit" value="Search" class="btn btn-info" />
             }
 

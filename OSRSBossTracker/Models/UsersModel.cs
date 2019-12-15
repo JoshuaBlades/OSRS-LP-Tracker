@@ -17,7 +17,7 @@ namespace OSRSBossTracker.Models
 
         public List<string> Stats = new List<string>();
 
-        public List<Bosses> bosses = new List<Bosses>();
+        public List<Bosses> Bosses = new List<Bosses>();
     }
 }
 public class Bosses
