@@ -8,16 +8,31 @@
 <div>
     <table class="table">
         <tr>
+            <th>Boss Name</th>
+            <th>Kill Count</th>
+            <th>Rank</th>
+        </tr>
+        <tr>
             <td>
-                Stats
+                @foreach (var s in Model.bosses)
+                {
+                    @Html.Raw("Boss name goes here")
+                    <br />
+                }
             </td>
             <td>
-                @foreach (var s in Model.Stats)
+                @foreach (var s in Model.bosses)
                 {
-                    @Html.DisplayFor(model => s)
-                    <br/>
+                    @Html.DisplayFor(model => s.Kc)
+                    <br />
                 }
-
+            </td>
+            <td>
+                @foreach (var s in Model.bosses)
+                {
+                    @Html.DisplayFor(model => s.Rank)
+                    <br />
+                }
             </td>
         </tr>
     </table>

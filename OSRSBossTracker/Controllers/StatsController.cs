@@ -140,17 +140,34 @@ namespace OSRSBossTracker.Controllers
             // Close the response.  
             response.Close();
 
-            // Split stats data 
+            // Split hiscores data 
             string[] lines = responseFromServer.Split(new[] { ",", "\n"}, StringSplitOptions.RemoveEmptyEntries);
+
+            // Split level and minigames/bosses hiscores apart
+            // if you think this is ugly feel free to change my methodology
+            string[] stats = new string[72];
+            string[] minigames = new string[23];
+            string[] bosses = new string[82];
+            Array.Copy(lines, 0, stats, 0, 72);
+            Array.Copy(lines, 72, minigames, 0, 23);
+            Array.Copy(lines, 94, bosses, 0, 82);
 
             // Set the model name
             User.Name = ign;
 
-            // Set the model stats
-            foreach (string s in lines)
+            //set the model boss kc
+            for(int i = 0; i < bosses.Length; i += 2)
             {
-                User.Stats.Add(s);
+                Bosses bossKC = new Bosses(bosses[i], bosses[i + 1]);
+                User.bosses.Add(bossKC);
             }
+
+            //===== commented this out for now cos just wanted to see boss kills =====
+            // Set the model stats
+            //foreach (string s in lines)
+            //{
+            //    User.Stats.Add(s);
+            //}
 
             // Return the data to the correct view
             return View("Index", User);
