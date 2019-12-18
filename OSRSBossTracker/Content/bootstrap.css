@@ -5629,7 +5629,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
     .navbar-inverse .navbar-brand {
-        color: #38A1F3;
+        color: #ff8c00;
     }
 
         .navbar-inverse .navbar-brand:hover,
@@ -6079,7 +6079,7 @@ a.badge:focus {
 
     .jumbotron p {
         margin-bottom: 15px;
-        font-size: 21px;
+        font-size: 50px;
         font-weight: 200;
     }
 
