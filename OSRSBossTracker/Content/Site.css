@@ -25,3 +25,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Stuff for table on stats page, #bossTable specific css */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+table#bossTable tr:nth-child(even) {
+    background-color: #141f27;
+}
+
+table#bossTable tr:nth-child(odd) {
+    background-color: #142726;
+}
+
+table#bossTable th {
+    background-color: black;
+    color: white;
+}

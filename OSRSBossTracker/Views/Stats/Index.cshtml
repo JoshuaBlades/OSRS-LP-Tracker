@@ -6,48 +6,43 @@
 <h2 style="color:#fff">@Model.Name</h2>
 
 <div>
-    <table class="table">
+    <table class="table" id="bossTable">
         <tr>
             <th style="color:#fff">Boss Name</th>
             <th style="color:#fff">Kill Count</th>
             <th style="color:#fff">Rank</th>
         </tr>
-        <tr>
-            <td>
-                @foreach (var s in Model.BossList)
-                {
-                    @Html.DisplayFor(model => s)
-                    <br />
-                }
-            </td>
-            <td>
-                @foreach (var s in Model.Bosses)
-                {
-                    if (s.Kc == "-1")
-                    {
-                        @Html.Raw("Unranked")
-                    }
-                    else
-                    {
-                        @Html.DisplayFor(model => s.Kc)
-                    }
-                    <br />
-                }
-            </td>
-            <td>
-                @foreach (var s in Model.Bosses)
-                {
-                    if (s.Rank == "-1")
-                    {
-                        @Html.Raw("Unranked")
-                    }
-                    else
-                    {
-                        @Html.DisplayFor(model => s.Rank)
-                    }
-                    <br />
-                }
-            </td>
-        </tr>
+        @{int bossCount = 0;
+            foreach (var s in Model.Bosses)
+            {
+                <tr>
+                    <td>
+                        @* For some reason we are getting the ; added to the end of the boss names, hack fix for now *@
+                        @Html.Raw(Model.BossList[bossCount]);
+                    </td>
+                    @{bossCount++;}
+                    <td>
+                        @if (s.Kc == "-1")
+                        {
+                            @Html.Raw("Unranked")
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(model => s.Kc)
+                        }
+                    </td>
+                    <td>
+                        @if (s.Rank == "-1")
+                        {
+                            @Html.Raw("Unranked")
+                        }
+                        else
+                        {
+                            @Html.DisplayFor(model => s.Rank)
+                        }
+                    </td>
+                </tr>
+            }
+        }
     </table>
 </div>
