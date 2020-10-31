@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSRSBossTracker", "OSRSBossTracker\OSRSBossTracker.csproj", "{94C78915-53F1-4A41-A7D1-1A8108FB41F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSRSLPTracker", "OSRSBossTracker\OSRSLPTracker.csproj", "{94C78915-53F1-4A41-A7D1-1A8108FB41F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

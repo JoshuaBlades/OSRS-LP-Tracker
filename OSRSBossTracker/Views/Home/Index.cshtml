@@ -6,12 +6,12 @@
     <img src="~/Content/Pictures/1500x500.jpg" style="position:relative; top:10px; z-index:99; right:180px">
     <div style="        position: absolute;
         top: 15%;
-        left: 50%;
+        left: 51%;
         transform: translate(-50%, -50%);
         color: #fff;
         z-index: 100;
         font-size: 100px;
-        text-shadow: -1px 0 black, 0 2px black, 4px 0 black, 1px -1px black;">BossHQ</div>
+        text-shadow: -1px 0 black, 0 2px black, 4px 0 black, 1px -1px black;">LP Tracker</div>
 </div>
 
 <div class="jumbotron" style="background:transparent !important">
@@ -21,10 +21,14 @@
             <div style="align-content:center">
                 @using (Html.BeginForm("GetStats", "Stats", FormMethod.Post))
                 {
-                    @Html.TextBox("ign", null, new { @class = "form-control", @style = "width: 100%; padding: 20px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"});       
-                    <input type="submit" value="Search" class="btn btn-info" style="font-size:20px; background-color:rgb(20,31,39)"/>
+                    @Html.TextBox("ign", null, new { @class = "form-control", @style = "width: 100%; padding: 20px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" });
+                    <input type="submit" value="Search" class="btn btn-info" style="font-size:20px; background-color:rgb(20,31,39)" />
                 }
             </div>
         </div>
+        @using (Html.BeginForm("GetFoh", "Stats", FormMethod.Get))
+        {
+            <input type="submit" value="FOH Check" class="btn btn-info" style="font-size:20px; background-color:rgb(20,31,39)" />
+        }
     </div>
 </div>

@@ -3,46 +3,55 @@
     ViewBag.Title = "Stats";
 }
 
-<h2 style="color:#fff">@Model.Name</h2>
+@*<h2 style="color:#fff">@Model.Name</h2>*@
 
 <div>
-    <table class="table" id="bossTable">
-        <tr>
-            <th style="color:#fff">Boss Name</th>
-            <th style="color:#fff">Kill Count</th>
-            <th style="color:#fff">Rank</th>
-        </tr>
-        @{int bossCount = 0;
-            foreach (var s in Model.Bosses)
+    @if (Model.Players.Count == 0)
+    {
+        <h2 style="color: #ff8c00; transform: translate(40%, -50%)">@Html.Raw("User not found")</h2>
+
+    }
+    else
+    {
+        <table class="table" id="playerTable">
+            <tr>
+                <th style="color:#fff">Position</th>
+                <th style="color:#fff">Player Name</th>
+                <th style="color:#fff">League Points</th>
+                <th style="color:#fff">Total Level</th>
+            </tr>
+
+            @for (int i = 0; i < Model.Players.Count; ++i)
             {
                 <tr>
-                    <td>
-                        @* For some reason we are getting the ; added to the end of the boss names, hack fix for now *@
-                        @Html.Raw(Model.BossList[bossCount]);
+                    <td style="color: #ff8c00">
+                        @Html.Raw((i + 1).ToString())
                     </td>
-                    @{bossCount++;}
                     <td>
-                        @if (s.Kc == "-1")
+                        @Html.DisplayFor(model => Model.Players[i].Name)
+                    </td>
+                    <td style="color: #ff8c00">
+                        @if (Model.Players[i].LeaguePoints == -1)
                         {
                             @Html.Raw("Unranked")
                         }
                         else
                         {
-                            @Html.DisplayFor(model => s.Kc)
+                            @Html.DisplayFor(model => Model.Players[i].LeaguePoints)
                         }
                     </td>
                     <td>
-                        @if (s.Rank == "-1")
+                        @if (Model.Players[i].TotalLevel == -1)
                         {
                             @Html.Raw("Unranked")
                         }
                         else
                         {
-                            @Html.DisplayFor(model => s.Rank)
+                            @Html.DisplayFor(model => Model.Players[i].TotalLevel)
                         }
                     </td>
                 </tr>
             }
-        }
-    </table>
+        </table>
+    }
 </div>
