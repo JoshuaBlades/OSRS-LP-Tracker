@@ -1,2 +1,2 @@
-# OSRS-Boss-Tracker
-OSRS Boss Kill Count Tracker
+# OSRS-LP-Tracker
+OSRS League Point Tracker
